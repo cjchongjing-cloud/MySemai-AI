@@ -65,7 +65,7 @@ To run this application, you must have the following installed and available:
 **How to Install:**
 1. Clone or download the complete project repository to your local machine.
 2. Ensure all files (`app.py`, `index.html`, `style.css`, `start.bat`, etc.) remain together in the root directory.
-3. [cite_start]Open the `.env` file and verify that the `GEMINI_API_KEY` variable contains a valid Google Gemini API key[cite: 1].
+3. Open the `.env` file and verify that the `GEMINI_API_KEY` variable contains a valid Google Gemini API key.
 
 **How to Run:**
 * **For Windows Users:** Simply double-click the `start.bat` file. [cite_start]This automated deployment script will instantly install all required Python libraries (`flask`, `flask-cors`, `google-generativeai`, `python-dotenv`), launch the local Flask backend server, and open the application in your default web browser[cite: 247].
@@ -96,6 +96,9 @@ To run this application, you must have the following installed and available:
   * *Action:* Successfully save a new word to the database, then immediately click the "My Library" tab.
   * *Expected Result:* The newly added word instantly populates at the top of the "Recent" list without requiring a manual server restart, demonstrating successful real-time integration between the SQLite database and the HTML frontend.
 
-
-
-
+👥 Team
+--------
+- Chong Jing 
+- Teoh Jing Ling
+- Teh Xin
+- Choh Zhen Xuan
