@@ -53,9 +53,8 @@ To ensure uninterrupted operation during live demonstrations, the application fe
                 "confidence": f"{random.randint(75, 95)}%"
 
             })
-
-
-## 2. ⚙️ Setup Instructions
+```
+## 4. ⚙️ Setup Instructions
 
 **Prerequisites:**
 To run this application, you must have the following installed and available:
@@ -69,7 +68,7 @@ To run this application, you must have the following installed and available:
 3. [cite_start]Open the `.env` file and verify that the `GEMINI_API_KEY` variable contains a valid Google Gemini API key[cite: 1].
 
 **How to Run:**
-* **For Windows Users (Recommended):** Simply double-click the `start.bat` file. [cite_start]This automated deployment script will instantly install all required Python libraries (`flask`, `flask-cors`, `google-generativeai`, `python-dotenv`), launch the local Flask backend server, and open the application in your default web browser[cite: 247].
+* **For Windows Users:** Simply double-click the `start.bat` file. [cite_start]This automated deployment script will instantly install all required Python libraries (`flask`, `flask-cors`, `google-generativeai`, `python-dotenv`), launch the local Flask backend server, and open the application in your default web browser[cite: 247].
 * **For macOS/Linux Users:** Open your terminal, navigate to the project folder, and run the following commands sequentially:
   ` ` `bash
   pip install flask flask-cors google-generativeai python-dotenv
@@ -79,7 +78,7 @@ To run this application, you must have the following installed and available:
 
 ---
 
-## 3. 🚀 How to Interact with the Prototype
+## 5. 🚀 How to Interact with the Prototype
 
 ### Step-by-Step Guide for Judges:
 1. **Grant Permissions:** Upon launching the application, click "Allow" when the browser requests permission to access your camera hardware.
@@ -96,4 +95,7 @@ To run this application, you must have the following installed and available:
 * **Test Case 3: Dynamic Database Fetching.**
   * *Action:* Successfully save a new word to the database, then immediately click the "My Library" tab.
   * *Expected Result:* The newly added word instantly populates at the top of the "Recent" list without requiring a manual server restart, demonstrating successful real-time integration between the SQLite database and the HTML frontend.
+
+
+
 
