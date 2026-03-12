@@ -54,6 +54,7 @@ To ensure uninterrupted operation during live demonstrations, the application fe
 
             })
 
+
 ## 2. ⚙️ Setup Instructions
 
 **Prerequisites:**
@@ -95,3 +96,4 @@ To run this application, you must have the following installed and available:
 * **Test Case 3: Dynamic Database Fetching.**
   * *Action:* Successfully save a new word to the database, then immediately click the "My Library" tab.
   * *Expected Result:* The newly added word instantly populates at the top of the "Recent" list without requiring a manual server restart, demonstrating successful real-time integration between the SQLite database and the HTML frontend.
+
