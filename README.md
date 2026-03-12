@@ -1,4 +1,4 @@
-# 🌿 MySemai AI: Preserving Endangered Dialects through Technological Innovation
+# 🌿 MySemai AI: Inidigenous Language Perservation
 
 ![MySemai AI Interface](cover_image.png)
 
@@ -15,6 +15,7 @@
 * Younger generations of the Kaum Semai seeking cultural reconnection.
 * Linguists, educators, and researchers documenting endangered languages.
 * The general public interested in Malaysian indigenous cultures.
+* Individuals with hearing loss.
 
 ---
 
@@ -50,4 +51,5 @@ To ensure uninterrupted operation during live demonstrations, the application fe
                 "semai": fallback_word[0], 
                 "english": fallback_word[1], 
                 "confidence": f"{random.randint(75, 95)}%"
+
             })
