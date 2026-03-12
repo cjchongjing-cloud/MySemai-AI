@@ -36,6 +36,7 @@ A real-time, community-driven dictionary that displays recently contributed word
 ### Interactive Cultural Education
 An interactive "About" module featuring 3D flip-cards that educate users on the history, geography, and rich cultural heritage of the Orang Asli Kaum Semai.
 ![About Interface](about_screenshot.png)
+
 ---
 
 ## 3. 💻 System Architecture & API Integration
@@ -109,4 +110,5 @@ To run this application, you must have the following installed and available:
 - Teoh Jing Ling
 - Teh Xin
 - Choh Zhen Xuan
+
 
