@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySemai AI</title>
+    <link rel="stylesheet" href="vars.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+            display: flex;
+            justify-content: center; 
+            background-color: #e0e0e0; 
+        }
+
+        /* toolbar hover effect (2C11B4 at 28%) */
+        .lip-read {
+            white-space: nowrap;
+            padding: 10px 20px;
+            border-radius: 15px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+            .lip-read:hover {
+                background-color: rgba(44, 17, 180, 0.28);
+            }
+
+        /* landing page selection hover effect (FF7070 at 20%) */
+        .lip-reading-selection, .save-new-word-selection {
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border-radius: 30px;
+        }
+
+            .lip-reading-selection:hover, .save-new-word-selection:hover {
+                transform: scale(1.05);
+                background-color: rgba(255, 112, 112, 0.2);
+                box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+            }
+
+        /* lip reading text */
+        .english-meaning-appear-box, .bahasa-semai-appear-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+        }
+
+        /* all other buttons pop when clicked */
+        .my-semai-ai-button, .buttontosave, .buttontosave2, .buttontosave3,
+        .buttontosave4, .buttontosave5, .buttontosave6, .click-for-more,
+        #backFromLipRead, #backFromSaveWord, #chatSendBtn, .about-2, .about2, .about-3 {
+            cursor: pointer;
+            transition: transform 0.1s ease-in-out, opacity 0.2s;
+        }
+
+            .my-semai-ai-button:hover, .buttontosave:hover, .buttontosave2:hover,
+            .buttontosave3:hover, .buttontosave4:hover, .buttontosave5:hover,
+            .buttontosave6:hover, .click-for-more:hover, #backFromLipRead:hover,
+            #backFromSaveWord:hover, #chatSendBtn:hover, .about-2:hover, .about2:hover, .about-3:hover {
+                opacity: 0.8;
+            }
+
+        /* 3d flip cards */
+        .about-2, .about2, .about-3 {
+            perspective: 1000px; 
+            background: transparent !important;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        /* triggers flip */
+        .flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* styling cards */
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 30px;
+            background-color: #cfede7;
+            border: 30px solid #00bb97;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: row; 
+            gap: 40px;
+            text-align: left;
+            justify-content: flex-start;
+        }
+
+            .my-semai-ai-button:active, .buttontosave:active, .buttontosave2:active,
+            .buttontosave3:active, .buttontosave4:active, .buttontosave5:active,
+            .buttontosave6:active, .click-for-more:active, #backFromLipRead:active,
+            #backFromSaveWord:active, #chatSendBtn:active, .about-2:active, .about2:active, .about-3:active {
+                transform: scale(0.95);
+            }
+
+        .text-input {
+            width: 90%;
+            height: 65px;
+            border: none;
+            border-radius: 12px;
+            padding: 0 15px;
+            font-size: 1.1rem;
+            outline: none;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-left {
+            background-color: #cfede7;
+            color: #333;
+        }
+
+        .input-right {
+            background-color: #00bb97;
+            color: #333;
+        }
+
+            .input-right::placeholder {
+                color: rgba(255,255,255,0.7);
+            }
+
+        .card {
+            background-color: #cfede7;
+            border: 4px solid #00bb97;
+            border-radius: 12px;
+            padding: 25px;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .term-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+
+            .term-title span {
+                border-bottom: 1px solid #ffffff;
+                padding-bottom: 2px;
+            }
+
+        .term-meaning {
+            font-size: 0.95rem;
+            color: #333;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!--  -->
+<div class="my-semai-ai">
+  <div class="landing-page">
+    <div class="page-title">
+      <div class="hi-mawat-eng">Hi Kawat Eng,</div>
+      <div
+        class="hi-my-friend-welcome-to-my-semai-ai-discover-learn-and-help-preserve-the-bahasa-semai-language-use-our-smart-ai-camera-to-translate-spoken-words-build-your-personal-vocabulary-library-and-explore-the-rich-history-of-semai-culture"
+      >
+        Hi my friend, welcome to MySemai AI! Discover, learn, and help preserve
+        the Bahasa Semai language. Use our smart AI camera to translate spoken
+        words, build your personal vocabulary library, and explore the rich
+        history of Semai culture.
+      </div>
+    </div>
+    <div class="tab-bar">
+      <div class="tabs">
+        <div class="lip-read">Lip Read</div>
+        <div class="rectangle-4"></div>
+      </div>
+      <div class="tabs2">
+        <div class="lip-read">My Library</div>
+      </div>
+      <div class="tabs3">
+        <div class="lip-read">About</div>
+      </div>
+    </div>
+    <div class="lip-reading-selection">
+      <div class="lip-reading-wording">Lip Reading</div>
+      <div class="instruction">
+        Use your camera to scan and practice lip reading, learn Bahasa Semai
+        words through visual recognition
+      </div>
+      <img class="lips-reading-picture" src="lips-reading-picture0.png" />
+      <div class="lips-reading-word-box"></div>
+    </div>
+    <div class="save-new-word-selection">
+      <img class="save-new-word-picture" src="save-new-word-picture0.png" />
+      <div class="save-new-word-box"></div>
+      <div class="save-new-word-wording">Save New Word</div>
+      <div class="instruction2">
+        Add new Bahasa Semai to your personal library
+      </div>
+    </div>
+    <img class="main-page-picture" src="main-page-picture0.png" />
+    <div class="my-semai-ai-button">
+      <div class="my-semai-ai2">MySemai AI</div>
+    </div>
+  </div>
+  <div class="lip-reading">
+      <div class="black-background">
+          <div id="backFromLipRead" style="position: absolute; top: 50px; left: 50px; z-index: 20; background: #00bb97; color: #fff; padding: 15px 30px; border-radius: 15px; font-size: 2rem; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">Back</div>
+          <div style="position: absolute; top: 60px; left: 0; right: 0; text-align: center; color: white; font-size: 2.5rem; font-weight: bold; z-index: 20; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); pointer-events: none;">Please keep your mouth in the camera</div>
+          <video id="scannerWebcam" style="position: absolute; left: 141px; top: 29px; width: 1005px; height: 900px; object-fit: cover; z-index: 10; border-radius: 30px;" autoplay playsinline muted></video>
+          <div class="rectangle-13"></div>
+      </div>
+          
+    <div class="colour-tile-5"></div>
+    <div class="colour-tile-4"></div>
+    <div class="english-wording">English</div>
+    <div class="bahasa-semai-wording">Bahasa Semai</div>
+    <div class="english-meaning-appear-box"></div>
+    <div class="bahasa-semai-appear-box"></div>
+    <div class="buttontosave">
+      <div class="rectangle-18"></div>
+      <div class="save-to-library">Save to Library</div>
+    </div>
+  </div>
+  <div class="library">
+    <div class="recent-wording">Recent</div>
+    <div class="library-wording">Library</div>
+    <div class="tab-bar2">
+      <div class="tabs">
+        <div class="lip-read">Lip Read</div>
+      </div>
+      <div class="tabs2">
+        <div class="lip-read">My Library</div>
+        <div class="rectangle-4"></div>
+      </div>
+      <div class="tabs3">
+        <div class="lip-read">About</div>
+      </div>
+    </div>
+    <div class="recent-box" style="padding: 20px; overflow-y: auto;">
+  	<div id="recentContainer" style="display:flex; flex-direction:column; gap:20px;">
+    </div>
+    </div>
+    <div class="library-box" style="padding: 20px; overflow-y: auto;">
+  	<div id="libraryContainer" style="display:grid; grid-template-columns: 1fr 1fr; gap:30px;">
+    </div>
+    </div>
+    <div class="click-for-more" style="top: 1850px;">
+      <div class="click-for-more2">Click for more</div>
+    </div>
+  </div>
+  <div class="about">
+    <div class="about-info">
+      <div class="welcome-to-the-world-of-kaum-semai">
+        Welcome to the World of Kaum Semai!
+      </div>
+      <div class="paragraph">
+        In the beautiful country of Malaysia, there is a very special and
+        respected family of people called the Orang Asli. &quot;Orang Asli&quot;
+        means the &quot;Original People&quot; or the &quot;First People.&quot;
+        The Semai people, or Kaum Semai, are one of the biggest and most
+        peaceful groups in this wonderful family
+      </div>
+    </div>
+    <div class="tab-bar3">
+      <div class="tabs">
+        <div class="lip-read">Lip Read</div>
+      </div>
+      <div class="tabs2">
+        <div class="lip-read">My Library</div>
+      </div>
+      <div class="tabs3">
+        <div class="lip-read">About</div>
+        <div class="rectangle-4"></div>
+      </div>
+    </div>
+    <img class="about-picture" src="about-picture0.png" />
+    <div class="starter">Tap a question to start exploring!</div>
+    <div class="about-2">
+      <div class="rectangle-21"></div>
+      <div class="where-do-semai-people-live">Where do Semai people live?</div>
+    </div>
+    <div class="about2">
+      <div class="rectangle-21"></div>
+      <div class="what-is-bahasa-semai">What is Bahasa Semai?</div>
+    </div>
+    <div class="about-3">
+      <div class="rectangle-21"></div>
+      <div class="how-do-semai-people-live">How do Semai people live?</div>
+    </div>
+  </div>
+  <div class="semai-ai">
+    <div class="buttontosave2">
+      <div class="rectangle-18"></div>
+      <div class="save-to-library2">Done</div>
+    </div>
+    <div class="colour-tile-3"></div>
+    <div class="page-title2">
+      <div class="my-semai-ai3">MySemai AI</div>
+    </div>
+    <div id="chatLog" style="position:absolute; top:250px; left:71px; width:1140px; height:1000px; background:#f4f4f4; border-radius:30px; overflow-y:auto; padding:30px; font-size:1.5rem; z-index:20; box-shadow: 0px 4px 4px rgba(0,0,0,0.2);">
+  	<p><b>Semai AI:</b> Hello! Ask me anything about the Bahasa Semai words in your library.</p>
+    </div>
+    <input type="text" id="chatInput" placeholder="Type your message here..." style="position:absolute; top:1320px; left:71px; width:800px; height:100px; font-size:1.5rem; padding:20px; z-index:20; border-radius:30px; border:2px solid #ccc;">
+    <div id="chatSendBtn" style="position:absolute; top:1320px; left:900px; width:310px; height:100px; background:#000; color:#fff; display:flex; align-items:center; justify-content:center; font-size:2rem; font-weight:bold; cursor:pointer; z-index:20; border-radius:30px;">Send</div>
+  </div>
+  <div class="learnedword">
+    <div class="congratulation-wording">
+      <div class="congratulation">Congratulation</div>
+    </div>
+    <img
+      class="https-lottiefiles-com-animations-confetti-ufhr-foo-5-zh"
+      src="https-lottiefiles-com-animations-confetti-ufhr-foo-5-zh0.gif"
+    />
+    <div class="starblink">
+      <img
+        class="https-lottiefiles-com-animations-star-yy-fe-7-ko-qt-a"
+        src="https-lottiefiles-com-animations-star-yy-fe-7-ko-qt-a0.gif"
+      />
+    </div>
+    <img
+      class="https-lottiefiles-com-animations-star-yy-fe-7-ko-qt-a2"
+      src="https-lottiefiles-com-animations-star-yy-fe-7-ko-qt-a1.gif"
+    />
+    <div class="learned-word-wording">
+      <div class="you-have-learned-a-new-word-of-bahasa-semai">
+        You have learned a new word of Bahasa Semai!
+      </div>
+    </div>
+    <div class="buttontosave3">
+      <div class="rectangle-18"></div>
+      <div class="save-to-library2">Done</div>
+    </div>
+  </div>
+  <div class="my-semai-library">
+    <div class="to-replace">
+      <div class="table">Table</div>
+    </div>
+    <div class="my-semai-library2">My Semai Library</div>
+    <div class="buttontosave4">
+      <div class="rectangle-18"></div>
+      <div class="save-to-library3">Done</div>
+    </div>
+  </div>
+  <div class="save-new-words">
+      <div class="black-background2">
+          <div id="backFromSaveWord" style="position: absolute; top: 50px; left: 50px; z-index: 20; background: #00bb97; color: #fff; padding: 15px 30px; border-radius: 15px; font-size: 2rem; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">Back</div>
+          <div style="position: absolute; top: 50px; left: 200px; right: 50px; text-align: center; color: white; font-size: 2rem; font-weight: bold; z-index: 20; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Please keep your mouth in the camera, press DONE for every start and end of reading, repeat for 5 times.</div>
+          <video id="recordWebcam" class="please-keep-your-mouth-in-the-camera-press-done-for-every-start-and-end-of-reading-repeat-for-5-times" style="object-fit: cover; z-index: 10; height: 900px; border-radius: 30px;" autoplay playsinline muted></video>
+          <div class="buttontosave5">
+              <div class="rectangle-18"></div>
+              <div class="save-to-library3">Done</div>
+          </div>
+      </div>
+
+      <div class="colour-tile-2"></div>
+      <div class="colour-tile-1"></div>
+      <div class="english-title">English</div>
+      <div class="bahasa-semai-title">Bahasa Semai</div>
+      <input type="text" id="englishText" name="english" class="english-meaning-box text-input input-left" placeholder="Enter English word" aria-label="English text input" style="z-index:20; background:transparent; color: #000000; font-size: 2rem; font-weight: bold;" required>
+      <input type="text" id="semaiText" name="semai" class="bahasa-semai-box text-input input-right" placeholder="Enter Bahasa Semai word" aria-label="Bahasa Semai text input" style="z-index:20; background:transparent; color: #000000; font-size: 2rem; font-weight: bold;" required>
+      <div class="please-fill-up-bahasa-semai-and-the-english-meaning">
+          Please fill up Bahasa Semai and the English meaning.
+      </div>
+      <div class="buttontosave6">
+          <div class="sve-word-complete-button"></div>
+          <div class="save-to-library-button">All Done</div>
+      </div>
+  </div>
+  <div class="savedword">
+    <div class="thank-you-wording">
+      <div class="thank-you">Thank You</div>
+    </div>
+    <div class="starblink">
+      <img
+        class="https-lottiefiles-com-animations-star-yy-fe-7-ko-qt-a"
+        src="https-lottiefiles-com-animations-star-yy-fe-7-ko-qt-a2.gif"
+      />
+    </div>
+    <img class="starblink-2" src="starblink-20.gif" />
+    <div class="save-word-wording">
+      <div class="you-have-saved-a-new-word-of-bahasa-semai">
+        You have saved a new word of Bahasa Semai!
+      </div>
+    </div>
+    <div class="buttontosave3">
+      <div class="rectangle-18"></div>
+      <div class="save-to-library2">Done</div>
+    </div>
+    <img class="confetti-gif2" src="confetti-gif1.gif" />
+  </div>
+</div>
+
+<script>
+    // on camera
+    let globalStream = null;
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+        .then(function(stream) {
+            globalStream = stream;
+            let scannerBox = document.getElementById('scannerWebcam');
+            if (scannerBox) scannerBox.srcObject = stream;
+            let recordBox = document.getElementById('recordWebcam');
+            if (recordBox) recordBox.srcObject = stream;
+        })
+        .catch(function(error) {
+            console.error("Camera error:", error);
+            alert("Please allow camera permissions.");
+        });
+
+    // page navigation
+    const pages = {
+        landing: document.querySelector('.landing-page'),
+        lipReading: document.querySelector('.lip-reading'),
+        saveWord: document.querySelector('.save-new-words'),
+        library: document.querySelector('.library'),
+        about: document.querySelector('.about'),
+        semaiAi: document.querySelector('.semai-ai'),
+        savedWord: document.querySelector('.savedword'),
+        learnedWord: document.querySelector('.learnedword'),
+        mySemaiLibrary: document.querySelector('.my-semai-library')
+    };
+
+    function showPage(pageName) {
+        Object.values(pages).forEach(p => { if (p) p.style.display = 'none'; });
+        if (pages[pageName]) pages[pageName].style.display = 'block';
+    }
+    showPage('landing');
+
+    document.querySelector('.lip-reading-selection')?.addEventListener('click', () => {
+        showPage('lipReading');
+        // auto-start lip reading
+        if (!isScanning) {
+            isScanning = true;
+            document.querySelector('.lip-reading .save-to-library').innerText = "Scanning...";
+            document.querySelector('.bahasa-semai-appear-box').innerText = "Detecting lips...";
+            document.querySelector('.english-meaning-appear-box').innerText = "Recording...";
+            startContinuousScan();
+        }
+    });
+    document.querySelector('.save-new-word-selection')?.addEventListener('click', () => showPage('saveWord'));
+    document.querySelector('.my-semai-ai-button')?.addEventListener('click', () => showPage('semaiAi'));
+    
+    // tab bar
+    document.querySelectorAll('.lip-read').forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            let text = e.target.innerText;
+            if (text.includes('Lip Read')) showPage('landing');
+            if (text.includes('Library')) {
+                loadLibrary(); 
+                showPage('library');
+            }
+            if (text.includes('About')) showPage('about');
+        });
+    });
+
+    // click for more page
+    document.querySelector('.click-for-more')?.addEventListener('click', () => {
+        loadLibrary(); 
+        showPage('mySemaiLibrary');
+    });
+    // Done button to My library page
+    document.querySelector('.buttontosave4')?.addEventListener('click', () => showPage('library'));
+
+    // Done button to landing page
+    document.getElementById('backFromLipRead')?.addEventListener('click', () => {
+        isScanning = false; 
+        showPage('landing');
+    });
+
+    document.getElementById('backFromSaveWord')?.addEventListener('click', () => {
+        // clear all saved videos and reset the counter
+        recordCount = 0;
+        videoClips = [];
+        recordedChunks = [];
+
+        // reset the recording button text back to Done button
+        const recordBtnText = document.querySelector('.buttontosave5 .save-to-library3');
+        if (recordBtnText) recordBtnText.innerText = "Done";
+
+        // clear the text boxes
+        document.getElementById('englishText').value = '';
+        document.getElementById('semaiText').value = '';
+
+        // back to the landing page
+        showPage('landing');
+    });
+
+    const aboutData = [
+        {
+            selector: '.about-2',
+            title: 'Where do Semai people live?',
+            img: 'about-pic-2.png',
+            text: 'Many Semai families live close to the beautiful green rainforests, clear rivers, and tall mountains in places like Perak and Pahang.' + '<br><br>'+'They have a very deep love and respect for nature.For hundreds of years, they have been experts at living in harmony with the forest, growing their own food, and crafting beautiful things from bamboo and leaves.'
+        },
+        {
+            selector: '.about2',
+            title: 'What is Bahasa Semai?',
+            img: 'about-pic-1.png',
+            text: 'Just like you might speak English or Malay with your family, the Semai people have their very own beautiful language called Bahasa Semai. For many, many generations, grandparents and parents have taught this language to their children by telling wonderful stories about the forest, singing songs, and talking together.' + '<br><br>' +'Every language has its own special sounds and shapes.Today, by looking closely at how the mouth moves, we can learn to understand and speak these beautiful words together.By learning Bahasa Semai, we are showing respect to the First People of Malaysia and helping to keep their amazing language shining bright!'
+
+        },
+        {
+            selector: '.about-3',
+            title: 'How do Semai people live?',
+            img: 'about-pic-3.png',
+            text: 'The Semai people are famous for being incredibly kind and peaceful, treating everyone in their village like one big, happy family. They have a beautiful tradition of always sharing what they have—like delicious fruits gathered from the forest—so no one is ever left out.' + '<br><br>' +'They love living closely with nature, building cozy homes from bamboo and leaves while always protecting the jungle.Instead of arguing when there is a problem, they sit down and talk gently until everyone is smiling and happy again.'
+
+        }
+    ];
+
+    aboutData.forEach(item => {
+        const card = document.querySelector(item.selector);
+        if (card) {
+
+            card.innerHTML = `
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <span style="font-size: 48px; font-weight: 700; color: #000;">${item.title}</span>
+                    </div>
+                    
+                    <div class="flip-card-back">
+                        <img src="${item.img}" style="width: 40%; height: 100%; object-fit: cover; border-radius: 15px;" alt="About Image">
+                        
+                        <div style="width: 60%; padding-left: 40px; font-size: 1.5rem; font-weight: normal; line-height: 1.4; color: #000; display: flex; flex-direction: column; justify-content: center;">
+                            <b style="font-size: 2.2rem; margin-bottom: 15px;">${item.title}</b>
+                            <span style="overflow-y: auto;">${item.text}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // card flip back and forth when click
+            card.addEventListener('click', function () {
+                this.classList.toggle('flipped');
+            });
+        }
+    });
+    document.querySelector('.semai-ai .buttontosave2')?.addEventListener('click', () => showPage('landing'));
+    document.querySelectorAll('.buttontosave3').forEach(btn => btn.addEventListener('click', () => showPage('landing')));
+
+
+    // AI lip scanner
+    let isScanning = false;
+    let wordScanned = false;
+    const scanBtn = document.querySelector('.lip-reading .buttontosave');
+
+    if (scanBtn) {
+        scanBtn.addEventListener('click', () => {
+            if (wordScanned) {
+                let scannedSemai = document.querySelector('.bahasa-semai-appear-box').innerText.split(' (')[0];
+                let scannedEnglish = document.querySelector('.english-meaning-appear-box').innerText;
+                let fd = new FormData();
+                fd.append('semai', scannedSemai);
+                fd.append('english', scannedEnglish);
+                fetch('http://127.0.0.1:5000/add_word', { method: 'POST', body: fd });
+
+                showPage('learnedWord');
+                wordScanned = false;
+                document.querySelector('.lip-reading .save-to-library').innerText = "Scan";
+                return;
+            }
+
+            if (!isScanning) {
+                isScanning = true;
+                document.querySelector('.lip-reading .save-to-library').innerText = "Scanning...";
+                startContinuousScan();
+            } else {
+                isScanning = false;
+                document.querySelector('.lip-reading .save-to-library').innerText = "Scan";
+            }
+        });
+    }
+
+    function startContinuousScan() {
+        if (!isScanning || !globalStream) return;
+        
+        let scanRecorder = new MediaRecorder(globalStream);
+        let scanChunks = [];
+        
+        scanRecorder.ondataavailable = e => scanChunks.push(e.data);
+        scanRecorder.onstop = () => {
+            if (!isScanning) return; 
+            
+            let videoBlob = new Blob(scanChunks, { type: 'video/webm' });
+            let formData = new FormData();
+            formData.append('video', videoBlob, 'scan.webm');
+
+            fetch('http://127.0.0.1:5000/scan_lips', { method: 'POST', body: formData })
+            .then(res => res.json())
+                .then(data => {
+                    if (data.semai !== "Unknown" && data.semai !== "Try again" && data.semai !== "AI Error") {
+                        document.querySelector('.bahasa-semai-appear-box').innerText = `${data.semai} (${data.confidence})`;
+                        document.querySelector('.english-meaning-appear-box').innerText = data.english;
+                        document.querySelector('.lip-reading .save-to-library').innerText = "Save to Library";
+                        isScanning = false;
+                        wordScanned = true;
+                    } else {
+                        document.querySelector('.bahasa-semai-appear-box').innerText = "Analyzing...";
+                        document.querySelector('.english-meaning-appear-box').innerText = "Keep speaking...";
+                        if (isScanning) startContinuousScan();
+                    }
+                })
+            .catch(err => {
+                if (isScanning) setTimeout(startContinuousScan, 1000); 
+            });
+        };
+        scanRecorder.start();
+        setTimeout(() => { if (scanRecorder.state === "recording") scanRecorder.stop(); }, 2000); 
+    }
+
+
+    // save new words with 5 video clips
+    let recordCount = 0;
+    let videoClips = [];
+    let recordedChunks = [];
+    
+    const recordBtn = document.querySelector('.buttontosave5');
+    const submitBtn = document.querySelector('.buttontosave6');
+    
+    if (recordBtn) {
+        recordBtn.addEventListener('click', () => {
+            if (recordCount >= 5) {
+                alert("You have recorded 5 clips. Click 'All Done' to save!");
+                return;
+            }
+            
+            let mediaRecorder = new MediaRecorder(globalStream);
+            document.querySelector('.buttontosave5 .save-to-library3').innerText = "Recording...";
+            
+            mediaRecorder.ondataavailable = e => { if (e.data.size > 0) recordedChunks.push(e.data); };
+            mediaRecorder.onstop = () => {
+                videoClips.push(new Blob(recordedChunks, { type: 'video/webm' }));
+                recordedChunks = []; 
+                recordCount++;
+                document.querySelector('.buttontosave5 .save-to-library3').innerText = `Done (${recordCount}/5)`;
+            };
+            
+            mediaRecorder.start();
+            setTimeout(() => mediaRecorder.stop(), 2000); 
+        });
+    }
+
+    if (submitBtn) {
+        submitBtn.addEventListener('click', () => {
+            let semai = document.getElementById('semaiText').value.trim();
+            let english = document.getElementById('englishText').value.trim();
+
+            if (!semai || !english || videoClips.length < 5) {
+                alert("Please type both words and record 5 video clips!");
+                return;
+            }
+
+            document.querySelector('.buttontosave6 .save-to-library-button').innerText = "Saving...";
+
+            let formData = new FormData();
+            formData.append('semai', semai);
+            formData.append('english', english);
+            videoClips.forEach((clip, index) => formData.append(`video_${index + 1}`, clip, `clip_${index+1}.webm`));
+
+            fetch('http://127.0.0.1:5000/add_word', { method: 'POST', body: formData })
+            .then(res => res.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        showPage('savedWord');
+                        setTimeout(() => location.reload(), 3000);
+                    } else {
+                        alert("Error: " + data.message);
+                        document.querySelector('.buttontosave6 .save-to-library-button').innerText = "All Done";
+                        showPage('landing');
+                    }
+                });
+        });
+    }
+
+
+    // AI chatbox
+    const chatBtn = document.getElementById('chatSendBtn');
+    if (chatBtn) {
+        chatBtn.addEventListener('click', () => {
+            const inputField = document.getElementById('chatInput');
+            const chatLog = document.getElementById('chatLog');
+            const userText = inputField.value.trim();
+            
+            if (userText === '') return;
+            
+            chatLog.innerHTML += `<p style="margin-top:20px; color:#434ff7;"><b>You:</b> ${userText}</p>`;
+            inputField.value = '';
+            chatLog.innerHTML += `<p id="typing" style="margin-top:10px; color:#888;"><i>Semai AI is typing...</i></p>`;
+            chatLog.scrollTop = chatLog.scrollHeight; 
+
+            fetch('http://127.0.0.1:5000/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userText })
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('typing').remove(); 
+                chatLog.innerHTML += `<p style="margin-top:10px;"><b>Semai AI:</b> ${data.response}</p>`;
+                chatLog.scrollTop = chatLog.scrollHeight;
+            })
+            .catch(err => {
+                document.getElementById('typing').remove();
+                chatLog.innerHTML += `<p style="color:red;"><b>Error:</b> Could not connect to backend.</p>`;
+            });
+        });
+    }
+
+// database link 
+function loadLibrary() {
+    fetch('http://127.0.0.1:5000/')
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === "success") {
+            const recentContainer = document.getElementById('recentContainer');
+            const libraryContainer = document.getElementById('libraryContainer');
+
+            // recent column
+            recentContainer.innerHTML = '';
+            data.recent_words.forEach(word => {
+                recentContainer.innerHTML += `<article class="card"><h3 class="term-title"><span>${word[0]}</span></h3><p class="term-meaning">${word[1]}</p></article>`;
+            });
+
+            // library list column
+            libraryContainer.innerHTML = '';
+            data.all_words.slice(-10).reverse().forEach(word => {
+                libraryContainer.innerHTML += `<article class="card"><h3 class="term-title"><span>${word[0]}</span></h3><p class="term-meaning">${word[1]}</p></article>`;
+            });
+
+            // 3. full table
+            const fullLibraryContainer = document.querySelector('.my-semai-library');
+            if (fullLibraryContainer && !document.getElementById('fullTable')) {
+                let tableHTML = '<div id="fullTable" style="position:absolute; top:300px; left:71px; width:1140px; height:1100px; overflow-y:auto; background:#cfede7; border-radius:30px; border:30px solid #00bb97; padding:40px; font-size: 2.5rem;"><table style="width:100%; text-align:left; border-collapse: collapse;"><tr><th style="padding-bottom:20px; border-bottom:3px solid #000;">Bahasa Semai</th><th style="padding-bottom:20px; border-bottom:3px solid #000;">English</th></tr>';
+                data.all_words.forEach(word => {
+                    tableHTML += `<tr><td style="padding:20px 0; border-bottom:1px solid rgba(0,0,0,0.2); font-weight:bold;">${word[0]}</td><td style="padding:20px 0; border-bottom:1px solid rgba(0,0,0,0.2);">${word[1]}</td></tr>`;
+                });
+                tableHTML += '</table></div>';
+                fullLibraryContainer.insertAdjacentHTML('beforeend', tableHTML);
+            }
+        }
+    })
+    .catch(err => console.error("Waiting for backend connection..."));
+}
+
+    window.onload = loadLibrary;
+
+    // auto-scale
+    function autoFitScreen() {
+        const appWrapper = document.querySelector('.my-semai-ai');
+        const scale = window.innerWidth / 1287;
+
+        if (scale < 1) {
+            appWrapper.style.transform = `scale(${scale})`;
+            appWrapper.style.transformOrigin = "top center";
+            document.body.style.height = `${appWrapper.getBoundingClientRect().height}px`;
+        } else {
+            appWrapper.style.transform = "none";
+            document.body.style.height = "auto";
+        }
+    }
+
+    window.addEventListener('resize', autoFitScreen);
+    autoFitScreen();
+
+</script>
+
+</body>
+</html>

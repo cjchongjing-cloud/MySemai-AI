@@ -1,0 +1,1129 @@
+.my-semai-ai,
+.my-semai-ai * {
+  box-sizing: border-box;
+}
+.my-semai-ai {
+    position: relative;
+    width: 1287px;
+    margin: 0 auto;
+}
+.landing-page {
+  background: #ffffff;
+  width: 1287px;
+  height: 2168px;
+  position: relative;
+  overflow: hidden;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+.page-title {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1061px;
+  position: absolute;
+  left: 79px;
+  top: 212px;
+}
+.hi-mawat-eng {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+.hi-my-friend-welcome-to-my-semai-ai-discover-learn-and-help-preserve-the-bahasa-semai-language-use-our-smart-ai-camera-to-translate-spoken-words-build-your-personal-vocabulary-library-and-explore-the-rich-history-of-semai-culture {
+  color: rgba(0, 0, 0, 0.75);
+  text-align: left;
+  font-family: var(--subheading-font-family, "Inter-Regular", sans-serif);
+  font-size: var(--subheading-font-size, 24px);
+  line-height: var(--subheading-line-height, 150%);
+  font-weight: var(--subheading-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.tab-bar {
+  width: 883px;
+  height: 70px;
+  position: absolute;
+  left: 80px;
+  top: 1291px;
+}
+.tabs {
+  width: 28.65%;
+  height: 100%;
+  position: absolute;
+  right: 71.35%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+}
+.lip-read {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.rectangle-4 {
+  background: #434ff7;
+  width: 298px;
+  height: 9px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 72px;
+}
+.tabs2 {
+  width: 35.9%;
+  height: 100%;
+  position: absolute;
+  right: 32.05%;
+  left: 32.05%;
+  bottom: 0%;
+  top: 0%;
+}
+.tabs3 {
+  width: 28.65%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 71.35%;
+  bottom: 0%;
+  top: 0%;
+}
+.lip-reading-selection {
+  width: 513px;
+  height: 437px;
+  position: absolute;
+  left: 100px;
+  top: 1502px;
+  aspect-ratio: 513/437;
+}
+.lip-reading-wording {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 40px;
+  line-height: 150%;
+  font-weight: 700;
+  position: absolute;
+  right: 38.85%;
+  left: 8.99%;
+  width: 52.16%;
+  bottom: 32.28%;
+  top: 56.12%;
+  height: 11.6%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.instruction {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 400;
+  position: absolute;
+  right: 3.59%;
+  left: 8.99%;
+  width: 87.42%;
+  bottom: 8.4%;
+  top: 70.04%;
+  height: 21.56%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.group-2 {
+  position: absolute;
+  inset: 0;
+}
+.lips-reading-picture {
+  border-radius: 30px 30px 0px 0px;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 50%;
+  top: 0%;
+  object-fit: cover;
+}
+.lips-reading-word-box {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0px 0px 30px 30px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.61);
+  border-width: 1px;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 50%;
+}
+.save-new-word-selection {
+  width: 512px;
+  height: 437px;
+  position: absolute;
+  left: 680px;
+  top: 1502px;
+}
+.save-new-word-picture {
+  border-radius: 30px 30px 0px 0px;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 50%;
+  top: 0%;
+  object-fit: cover;
+}
+.save-new-word-box {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0px 0px 30px 30px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.61);
+  border-width: 1px;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 50%;
+}
+.save-new-word-wording {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 40px;
+  line-height: 150%;
+  font-weight: 700;
+  position: absolute;
+  right: 20.66%;
+  left: 6.86%;
+  width: 72.48%;
+  bottom: 29.19%;
+  top: 55.63%;
+  height: 15.19%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.instruction2 {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 400;
+  position: absolute;
+  right: 17.68%;
+  left: 6.83%;
+  width: 75.49%;
+  bottom: 10.36%;
+  top: 70.89%;
+  height: 18.75%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.main-page-picture {
+  width: 1287px;
+  height: 643px;
+  position: absolute;
+  left: 0px;
+  top: 483px;
+  object-fit: cover;
+}
+.my-semai-ai-button {
+  background: #000000;
+  border-radius: 30px;
+  padding: 19px 23px 19px 23px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 182px;
+  height: 74px;
+  position: absolute;
+  left: 1013px;
+  top: 76px;
+}
+.my-semai-ai2 {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lip-reading {
+  background: #ffffff;
+  width: 1287px;
+  height: 2168px;
+  position: relative;
+  overflow: hidden;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+.black-background {
+  background: #000000;
+  border-radius: 8px;
+  width: 100%;
+  height: 1120px;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  top: 0px;
+  overflow: hidden;
+}
+.please-keep-your-mouth-in-the-camera {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 285px;
+  top: 48px;
+}
+.rectangle-13 {
+  background: #1e6926;
+  width: 643px;
+  height: 1040px;
+  position: absolute;
+  left: 0px;
+  top: 1117px;
+}
+.colour-tile-5 {
+  background: #00bb97;
+  width: 651px;
+  height: 1048px;
+  position: absolute;
+  left: -8px;
+  top: 1120px;
+}
+.colour-tile-4 {
+  background: #cfede7;
+  width: 651px;
+  height: 1048px;
+  position: absolute;
+  left: 643px;
+  top: 1120px;
+}
+.english-wording {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 206px;
+  top: 1191px;
+  -webkit-text-stroke: 1px #000000;
+}
+.bahasa-semai-wording {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 756px;
+  top: 1191px;
+  -webkit-text-stroke: 1px #000000;
+}
+.english-meaning-appear-box {
+  background: #cfede7;
+  border-radius: 30px;
+  width: 499px;
+  height: 147px;
+  position: absolute;
+  left: 73px;
+  top: 1349px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.8);
+}
+.bahasa-semai-appear-box {
+  background: #00bb97;
+  border-radius: 30px;
+  width: 499px;
+  height: 147px;
+  position: absolute;
+  left: 719px;
+  top: 1349px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.7);
+}
+.buttontosave {
+  width: 499px;
+  height: 147px;
+  position: absolute;
+  left: 726px;
+  top: 1710px;
+}
+.rectangle-18 {
+  background: #93d6f5;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.7);
+}
+.save-to-library {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  right: 5.01%;
+  left: 4.81%;
+  width: 90.18%;
+  bottom: 23.81%;
+  top: 23.81%;
+  height: 52.38%;
+}
+.library {
+  background: #ffffff;
+  width: 1287px;
+  height: 2168px;
+  position: relative;
+  overflow: hidden;
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+}
+.recent-wording {
+  color: #828282;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 40px;
+  line-height: 150%;
+  font-weight: 400;
+  position: absolute;
+  left: 42px;
+  top: 235px;
+  width: 191px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.library-wording {
+  color: #828282;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 40px;
+  line-height: 150%;
+  font-weight: 400;
+  position: absolute;
+  left: 42px;
+  top: 1119px;
+  width: 191px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-bar2 {
+  width: 883px;
+  height: 70px;
+  position: absolute;
+  left: 71px;
+  top: 119px;
+}
+.recent-box {
+  background: #cfede7;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #00bb97;
+  border-width: 30px;
+  width: 1140px;
+  height: 608px;
+  position: absolute;
+  left: 71px;
+  top: 319px;
+}
+.library-box {
+  background: #cfede7;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #00bb97;
+  border-width: 30px;
+  width: 1140px;
+  height: 608px;
+  position: absolute;
+  left: 71px;
+  top: 1209px;
+}
+.underline {
+  background: #ffffff;
+  width: 350px;
+  height: 10px;
+  position: absolute;
+  left: 121px;
+  top: 446px;
+}
+.bahasa-semai {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 137px;
+  top: 388px;
+}
+.english-meaning {
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 137px;
+  top: 477px;
+}
+.click-for-more {
+  width: 263px;
+  height: 48px;
+  position: absolute;
+  left: 137px;
+  top: 1710px;
+}
+.click-for-more2 {
+  color: #0f0e0e;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  width: 100%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+}
+.about {
+  background: #ffffff;
+  width: 1287px;
+  height: 2794px;
+  position: relative;
+  overflow: hidden;
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 1;
+}
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s, 24px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 624px;
+  position: absolute;
+  left: 580px;
+  top: 269px;
+}
+.welcome-to-the-world-of-kaum-semai {
+  color: #000000;
+  text-align: left;
+  font-family: var(--subheading-font-family, "Inter-Bold", sans-serif);
+  font-size: var(--subheading-font-size, 24px);
+  line-height: var(--subheading-line-height, 150%);
+  font-weight: var(--subheading-font-weight, 700);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.paragraph {
+  color: #000000;
+  text-align: left;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+}
+.tab-bar3 {
+  width: 883px;
+  height: 70px;
+  position: absolute;
+  left: 109px;
+  top: 113px;
+}
+.about-picture {
+  width: 452px;
+  height: 295px;
+  position: absolute;
+  left: 109px;
+  top: 263px;
+  object-fit: cover;
+}
+.starter {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  position: absolute;
+  left: 256px;
+  top: 606px;
+}
+.about-2 {
+  width: 1140px;
+  height: 608px;
+  position: absolute;
+  left: 74px;
+  top: 1334px;
+}
+.rectangle-21 {
+  background: #cfede7;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #00bb97;
+  border-width: 30px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+}
+.where-do-semai-people-live {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  position: absolute;
+  right: 19.56%;
+  left: 21.23%;
+  width: 59.21%;
+  bottom: 45.23%;
+  top: 45.23%;
+  height: 9.54%;
+}
+.about2 {
+  width: 1140px;
+  height: 608px;
+  position: absolute;
+  left: 74px;
+  top: 702px;
+}
+.what-is-bahasa-semai {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  position: absolute;
+  right: 25.35%;
+  left: 26.93%;
+  width: 47.72%;
+  bottom: 45.23%;
+  top: 45.23%;
+  height: 9.54%;
+}
+.about-3 {
+  width: 1140px;
+  height: 608px;
+  position: absolute;
+  left: 74px;
+  top: 1966px;
+}
+.how-do-semai-people-live {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  position: absolute;
+  right: 21.75%;
+  left: 23.42%;
+  width: 54.82%;
+  bottom: 45.23%;
+  top: 45.23%;
+  height: 9.54%;
+}
+.semai-ai {
+  background: #ffffff;
+  width: 1287px;
+  height: 2168px;
+  position: relative;
+  overflow: hidden;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+.buttontosave2 {
+  width: 357px;
+  height: 147px;
+  position: absolute;
+  left: 465px;
+  top: 1585px;
+}
+.save-to-library2 {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  right: 27.68%;
+  left: 27.22%;
+  width: 45.1%;
+  bottom: 23.81%;
+  top: 23.81%;
+  height: 52.38%;
+}
+.colour-tile-3 {
+  background: #cfede7;
+  width: 1287px;
+  height: 290px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.page-title2 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 71px;
+  top: 91px;
+}
+.my-semai-ai3 {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: relative;
+}
+.your-bahasa-semai-assistant {
+  color: rgba(78, 73, 73, 0.5);
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 71px;
+  top: 168px;
+}
+.learnedword {
+  background: #ffffff;
+  width: 1287px;
+  height: 2168px;
+  position: relative;
+  overflow: hidden;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+.congratulation-wording {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 303px;
+  top: 308px;
+}
+.congratulation {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 96px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: relative;
+}
+.confetti-gif {
+  position: absolute;
+  inset: 0;
+}
+.https-lottiefiles-com-animations-confetti-ufhr-foo-5-zh {
+  width: 1166px;
+  height: 504px;
+  position: absolute;
+  left: 60px;
+  top: 134px;
+  object-fit: cover;
+}
+.starblink {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 228px;
+  top: 401px;
+}
+.https-lottiefiles-com-animations-star-yy-fe-7-ko-qt-a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  object-fit: cover;
+}
+.https-lottiefiles-com-animations-star-yy-fe-7-ko-qt-a2 {
+  width: 170px;
+  height: 147px;
+  position: absolute;
+  left: 916px;
+  top: 170px;
+  object-fit: cover;
+}
+.learned-word-wording {
+  padding: 10px;
+  width: 1052px;
+  height: 212px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 693px;
+}
+.you-have-learned-a-new-word-of-bahasa-semai {
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 64px;
+  line-height: 150%;
+  font-weight: 400;
+  position: absolute;
+  left: calc(50% - 526px);
+  top: 0px;
+  width: 1042px;
+  height: 186px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttontosave3 {
+  width: 357px;
+  height: 147px;
+  position: absolute;
+  left: 465px;
+  top: 1191px;
+}
+.my-semai-library {
+  background: #ffffff;
+  width: 1287px;
+  height: 2168px;
+  position: relative;
+  overflow: hidden;
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+}
+.to-replace {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  position: absolute;
+  left: 570px;
+  top: 721px;
+}
+.table {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: relative;
+}
+.my-semai-library2 {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  position: absolute;
+  left: 71px;
+  top: 87px;
+}
+.buttontosave4 {
+  width: 499px;
+  height: 147px;
+  position: absolute;
+  left: 394px;
+  top: 1514px;
+}
+.save-to-library3 {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  right: 33.87%;
+  left: 33.87%;
+  width: 32.26%;
+  bottom: 23.81%;
+  top: 23.81%;
+  height: 52.38%;
+}
+.save-new-words {
+  background: #ffffff;
+  width: 1287px;
+  height: 2168px;
+  position: relative;
+  overflow: hidden;
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+.black-background2 {
+  background: #000000;
+  border-radius: 8px;
+  width: 100%;
+  height: 1367px;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  top: 0px;
+  overflow: hidden;
+}
+.please-keep-your-mouth-in-the-camera-press-done-for-every-start-and-end-of-reading-repeat-for-5-times {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 141px;
+  top: 29px;
+  width: 1005px;
+  height: 122px;
+}
+.buttontosave5 {
+  width: 499px;
+  height: 147px;
+  position: absolute;
+  left: 394px;
+  top: 1144px;
+}
+.colour-tile-2 {
+  background: #00bb97;
+  width: 651px;
+  height: 801px;
+  position: absolute;
+  left: -8px;
+  top: 1367px;
+}
+.colour-tile-1 {
+  background: #cfede7;
+  width: 651px;
+  height: 801px;
+  position: absolute;
+  left: 643px;
+  top: 1367px;
+}
+.english-title {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 206px;
+  top: 1551px;
+  -webkit-text-stroke: 1px #000000;
+}
+.bahasa-semai-title {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 756px;
+  top: 1551px;
+  -webkit-text-stroke: 1px #000000;
+}
+.english-meaning-box {
+  background: #cfede7;
+  border-radius: 30px;
+  width: 499px;
+  height: 147px;
+  position: absolute;
+  left: 68px;
+  top: 1674px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.8);
+}
+.bahasa-semai-box {
+  background: #00bb97;
+  border-radius: 30px;
+  width: 499px;
+  height: 147px;
+  position: absolute;
+  left: 719px;
+  top: 1674px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.7);
+}
+.please-fill-up-bahasa-semai-and-the-english-meaning {
+  color: #0f0e0e;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  left: 183px;
+  top: 1457px;
+}
+.buttontosave6 {
+  width: 499px;
+  height: 147px;
+  position: absolute;
+  left: 394px;
+  top: 1941px;
+}
+.sve-word-complete-button {
+  background: #93d6f5;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.7);
+}
+.save-to-library-button {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: absolute;
+  right: 24.65%;
+  left: 24.65%;
+  width: 50.7%;
+  bottom: 23.81%;
+  top: 23.81%;
+  height: 52.38%;
+}
+.savedword {
+  background: #ffffff;
+  width: 1287px;
+  height: 2168px;
+  position: relative;
+  overflow: hidden;
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+}
+.thank-you-wording {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 403px;
+  top: 317px;
+}
+.thank-you {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 96px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: relative;
+}
+.effects {
+  position: absolute;
+  inset: 0;
+}
+.starblink-2 {
+  width: 170px;
+  height: 147px;
+  position: absolute;
+  left: 916px;
+  top: 170px;
+  object-fit: cover;
+}
+.save-word-wording {
+  padding: 10px;
+  width: 1052px;
+  height: 212px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 693px;
+}
+.you-have-saved-a-new-word-of-bahasa-semai {
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 64px;
+  line-height: 150%;
+  font-weight: 400;
+  position: absolute;
+  left: calc(50% - 526px);
+  top: 0px;
+  width: 1042px;
+  height: 186px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.confetti-gif2 {
+  width: 1166px;
+  height: 504px;
+  position: absolute;
+  left: 60px;
+  top: 123px;
+  object-fit: cover;
+}
