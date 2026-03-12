@@ -29,6 +29,13 @@ Users can speak Bahasa Semai into the camera, and the application uses prompt-en
 Users record brief visual clips to add brand-new vocabulary to the dynamic local database.
 ![Database Contribution](save_word_screenshot.png)
 
+### Dynamic Vocabulary Library
+A real-time, community-driven dictionary that displays recently contributed words alongside a comprehensive table of all translated Bahasa Semai vocabulary pulled directly from the local SQLite database.
+![Library Interface](library_screenshot.png)
+
+### Interactive Cultural Education
+An interactive "About" module featuring 3D flip-cards that educate users on the history, geography, and rich cultural heritage of the Orang Asli Kaum Semai.
+![About Interface](about_screenshot.png)
 ---
 
 ## 3. 💻 System Architecture & API Integration
@@ -96,9 +103,10 @@ To run this application, you must have the following installed and available:
   * *Action:* Successfully save a new word to the database, then immediately click the "My Library" tab.
   * *Expected Result:* The newly added word instantly populates at the top of the "Recent" list without requiring a manual server restart, demonstrating successful real-time integration between the SQLite database and the HTML frontend.
 
-👥 Team
+👥 Team members
 --------
 - Chong Jing 
 - Teoh Jing Ling
 - Teh Xin
 - Choh Zhen Xuan
+
