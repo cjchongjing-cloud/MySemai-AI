@@ -1,4 +1,5 @@
 # 🌿 MySemai AI: Inidigenous Language Perservation
+## 📁
 
 ![MySemai AI Interface](cover_image.png)
 
@@ -110,6 +111,7 @@ To run this application, you must have the following installed and available:
 - Teoh Jing Ling
 - Teh Xin
 - Choh Zhen Xuan
+
 
 
 
