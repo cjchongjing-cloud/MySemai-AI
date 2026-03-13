@@ -73,10 +73,10 @@ To run this application, you must have the following installed and available:
 **How to Install:**
 1. Clone or download the complete project repository to your local machine.
 2. Ensure all files (`app.py`, `index.html`, `style.css`, `start.bat`, etc.) remain together in the root directory.
-3. Open the `.env` file and verify that the `GEMINI_API_KEY` variable contains a valid Google Gemini API key.
+3. Locate the `.env.example` file in the main folder and save a new file as `.env`. Open this newly renamed `.env` file and insert a valid Google Gemini API key where indicated.
 
 **How to Run:**
-* **For Windows Users:** Simply double-click the `start.bat` file. [cite_start]This automated deployment script will instantly install all required Python libraries (`flask`, `flask-cors`, `google-generativeai`, `python-dotenv`), launch the local Flask backend server, and open the application in your default web browser[cite: 247].
+* **For Windows Users:** Simply double-click the `start.bat` file. This automated deployment script will instantly install all required Python libraries (`flask`, `flask-cors`, `google-generativeai`, `python-dotenv`), launch the local Flask backend server, and open the application in your default web browser.
 * **For macOS/Linux Users:** Open your terminal, navigate to the project folder, and run the following commands sequentially:
   ` ` `bash
   pip install flask flask-cors google-generativeai python-dotenv
@@ -110,5 +110,6 @@ To run this application, you must have the following installed and available:
 - Teoh Jing Ling
 - Teh Xin
 - Choh Zhen Xuan
+
 
 
